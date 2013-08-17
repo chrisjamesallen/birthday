@@ -7,10 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <OpenGL/OpenGL.h>
+#import "RPGLView.h"
+ 
 
 @interface RPAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSView * view;
+@property (assign) RPGLView * glView;
 
 @end

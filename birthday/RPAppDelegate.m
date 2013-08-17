@@ -7,6 +7,8 @@
 //
 
 #import "RPAppDelegate.h"
+#import "RPGLView.h"
+
 
 @implementation RPAppDelegate
 
@@ -19,22 +21,23 @@
 {
 	// Insert code here to initialize your application
 	NSWindow * window = self.window;
+	// Create NSOpenGLView
+	self.glView = [[RPGLView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+	// Add view
+	[window setContentView:self.glView];
+	// force draw
+	[self.glView setNeedsDisplay:YES];
+	// delegate to allow notifications
+	window.delegate = self.glView;
+	// make transparent
 	[window setOpaque:NO];
 	NSColor * transparent = [NSColor colorWithCalibratedWhite:1.0 alpha:0.0];
 	[window setBackgroundColor:transparent];
-
-	//set max screen
+	//set size to max screen
 	NSScreen * screen = [NSScreen mainScreen];
 	CGRect frame = screen.frame;
 	[window setFrame:frame display:YES];
-	
-	//put at front
-	//[window orderFrontRegardless];
-	//[NSApp activateIgnoringOtherApps:YES];
-	
-	[window setLevel:NSScreenSaverWindowLevel + 1];
-	[window orderFront:nil];
-	
+  
 }
 
 @end

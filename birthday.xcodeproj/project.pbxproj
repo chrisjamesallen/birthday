@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76759D3217B6C1C0006775A7 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76759D3117B6C1C0006775A7 /* OpenGL.framework */; };
+		76759D3717B6C1D3006775A7 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76759D3517B6C1D3006775A7 /* Quartz.framework */; };
+		76759D3817B6C1D3006775A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76759D3617B6C1D3006775A7 /* QuartzCore.framework */; };
+		76759D3917B6C1E2006775A7 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F4B99617B6A11600D111B9 /* AppKit.framework */; };
+		76759D3C17B7F90F006775A7 /* RPGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76759D3B17B7F90F006775A7 /* RPGLView.m */; };
+		76759D3E17B802E0006775A7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76759D3D17B802E0006775A7 /* GLKit.framework */; };
 		76F4B99417B6A11600D111B9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F4B99317B6A11600D111B9 /* Cocoa.framework */; };
 		76F4B99E17B6A11600D111B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76F4B99C17B6A11600D111B9 /* InfoPlist.strings */; };
 		76F4B9A017B6A11600D111B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F4B99F17B6A11600D111B9 /* main.m */; };
@@ -16,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76759D3117B6C1C0006775A7 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		76759D3317B6C1C8006775A7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		76759D3517B6C1D3006775A7 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		76759D3617B6C1D3006775A7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		76759D3A17B7F90F006775A7 /* RPGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RPGLView.h; path = views/RPGLView.h; sourceTree = "<group>"; };
+		76759D3B17B7F90F006775A7 /* RPGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RPGLView.m; path = views/RPGLView.m; sourceTree = "<group>"; };
+		76759D3D17B802E0006775A7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		76F4B99017B6A11600D111B9 /* birthday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = birthday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F4B99317B6A11600D111B9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		76F4B99617B6A11600D111B9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -37,6 +50,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76759D3E17B802E0006775A7 /* GLKit.framework in Frameworks */,
+				76759D3917B6C1E2006775A7 /* AppKit.framework in Frameworks */,
+				76759D3717B6C1D3006775A7 /* Quartz.framework in Frameworks */,
+				76759D3817B6C1D3006775A7 /* QuartzCore.framework in Frameworks */,
+				76759D3217B6C1C0006775A7 /* OpenGL.framework in Frameworks */,
 				76F4B99417B6A11600D111B9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +91,11 @@
 		76F4B99517B6A11600D111B9 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76759D3D17B802E0006775A7 /* GLKit.framework */,
+				76759D3517B6C1D3006775A7 /* Quartz.framework */,
+				76759D3617B6C1D3006775A7 /* QuartzCore.framework */,
+				76759D3317B6C1C8006775A7 /* OpenAL.framework */,
+				76759D3117B6C1C0006775A7 /* OpenGL.framework */,
 				76F4B99617B6A11600D111B9 /* AppKit.framework */,
 				76F4B99717B6A11600D111B9 /* CoreData.framework */,
 				76F4B99817B6A11600D111B9 /* Foundation.framework */,
@@ -86,6 +109,8 @@
 				76F4B9B017B6A12300D111B9 /* birthday.entitlements */,
 				76F4B9A517B6A11600D111B9 /* RPAppDelegate.h */,
 				76F4B9A617B6A11600D111B9 /* RPAppDelegate.m */,
+				76759D3A17B7F90F006775A7 /* RPGLView.h */,
+				76759D3B17B7F90F006775A7 /* RPGLView.m */,
 				76F4B9A817B6A11600D111B9 /* MainMenu.xib */,
 				76F4B99A17B6A11600D111B9 /* Supporting Files */,
 			);
@@ -171,6 +196,7 @@
 			files = (
 				76F4B9A017B6A11600D111B9 /* main.m in Sources */,
 				76F4B9A717B6A11600D111B9 /* RPAppDelegate.m in Sources */,
+				76759D3C17B7F90F006775A7 /* RPGLView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +338,7 @@
 				76F4B9AF17B6A11600D111B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
