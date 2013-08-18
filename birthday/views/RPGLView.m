@@ -10,7 +10,7 @@
 #import <OpenGL/OpenGL.h>
 #import <GLKit/GLKit.h>
 #import <QuartzCore/CVDisplayLink.h>
-
+#import "RPController.h"
 void renderCallback(void);
 
 
@@ -22,14 +22,13 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     return result;
 }
 
+@interface RPGLView(controller)
+@property (assign) RPController * controller;
+@end
 
 
 @implementation RPGLView
-
-- (void)start{
-	//called from application delegate
-	[self prepareOpenGL];
-}
+ 
 
 - (void)windowDidResignMain:(NSNotification *)notification {
 	NSLog(@"window did resign main");
@@ -108,23 +107,18 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 }
 
 
-
-
 - (void) drawRect:(NSRect)dirtyRect
 {
 	[[NSColor clearColor] set];
 	 NSRectFill(dirtyRect);
 	// Ignore if the display link is still running
 	if (!CVDisplayLinkIsRunning(displayLink))
-		[self drawView];
+		[self drawView:nil];
 }
 
 
 
-float blah;
-
-//This gets all each display link request
-- (void)drawView:(CVTimeStamp*) timeStamp {
+- (void)drawView:(const CVTimeStamp*) timeStamp {
 	// lock context as is on display thread
 	CGLLockContext([[self openGLContext] CGLContextObj]);
 	// make sure we draw to the right context
@@ -133,6 +127,8 @@ float blah;
 	glClear(GL_COLOR_BUFFER_BIT);				
  	// draw operations
 	[self drawTestTriangle];
+	// tell controller to render
+	//[((RPController *)self.controller) render];
 	// and flush baby!
 	[[self openGLContext] flushBuffer];
 	// log out any errors on flush

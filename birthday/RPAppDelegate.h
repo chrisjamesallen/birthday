@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <OpenGL/OpenGL.h>
 #import "RPGLView.h"
- 
+#import "RPController.h"
 
 @interface RPAppDelegate : NSObject <NSApplicationDelegate>
 

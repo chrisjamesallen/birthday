@@ -10,9 +10,12 @@
 #import <QuartzCore/CVDisplayLink.h>
 
 
+
 @interface RPGLView : NSOpenGLView <NSWindowDelegate>
 {
 	CVDisplayLinkRef displayLink;
 }
+@property (assign) id controller;
+- (void) prepareOpenGL;
 - (CVReturn) getFrameForTime:(const CVTimeStamp*)outputTime;
 @end

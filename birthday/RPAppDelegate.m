@@ -37,7 +37,10 @@
 	NSScreen * screen = [NSScreen mainScreen];
 	CGRect frame = screen.frame;
 	[window setFrame:frame display:YES];
-  
+	//init controller
+	RPController * controller = [[RPController alloc] init];
+	controller.view = self.glView;
+	[controller start];
 }
 
 @end
