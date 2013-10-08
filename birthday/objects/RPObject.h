@@ -5,7 +5,8 @@
 #import "RPShader.h"
 
 @interface RPObject : NSObject{
-	
+	GLuint normalMatrix;
+	GLuint modelviewprojectionmatrix;
 }
 
 @property (assign) RPMesh * mesh;

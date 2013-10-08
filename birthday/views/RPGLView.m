@@ -71,7 +71,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     // Set the display link for the current renderer
     CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext(displayLink, [[self openGLContext] CGLContextObj], [[self pixelFormat] CGLPixelFormatObj]);
 	[self enableGL];
-	[self startAnimation];
+ 	[self startAnimation];
+	[self.controller start];
 }
 
 -(void) enableGL{
@@ -117,7 +118,6 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 }
 
 
-
 - (void)drawView:(const CVTimeStamp*) timeStamp {
 	// lock context as is on display thread
 	CGLLockContext([[self openGLContext] CGLContextObj]);
@@ -128,7 +128,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
  	// draw operations
 	[self drawTestTriangle];
 	// tell controller to render
-	//[((RPController *)self.controller) render];
+	[((RPController *)self.controller) render];
 	// and flush baby!
 	[[self openGLContext] flushBuffer];
 	// log out any errors on flush

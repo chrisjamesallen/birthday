@@ -1,26 +1,26 @@
 #import "RPController.h"
 #import "RPObject.h"
-
+#import "RPShader.h"
 @implementation RPController
 
 @synthesize  view,shaders;
 
 
 - (void) start {
-	[self.view prepareOpenGL];
 	[self prewarmObjects];
 }
 
 - (void) prewarmObjects {
 	//lets make an object
-	//[[RPObject alloc] init];
+	[[RPObject alloc] init];
 }
 
 - (void) render {
 	//iterate through each shader
-	for(id shader in self.shaders){
+	for(RPShader * shader in [[RPShader shaders] allValues]){
 		//iterate through each object
-		for(id object in shader){
+		[shader use];
+		for(id object in shader.objects){
 			[object render];
 		}
 	}

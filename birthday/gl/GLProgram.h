@@ -10,6 +10,7 @@
 {
     NSMutableArray  *attributess;
     NSMutableArray  *uniformss;
+@public
 	GLuint vertShader, program,
 	fragShader;
 	NSString *shadername;

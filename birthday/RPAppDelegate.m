@@ -39,8 +39,7 @@
 	[window setFrame:frame display:YES];
 	//init controller
 	RPController * controller = [[RPController alloc] init];
-	controller.view = self.glView;
-	[controller start];
+ 	self.glView.controller = controller;
 }
 
 @end
